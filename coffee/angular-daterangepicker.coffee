@@ -82,6 +82,9 @@ picker.directive('dateRangePicker', ($compile, $timeout, $parse, dateRangePicker
             if modelCtrl.$modelValue.startDate == null
                 return el.val('')
 
+            if modelCtrl.$modelValue.startDate.toString() == 'Invalid Date'
+                return el.val('')
+
             return el.val(_formatted(modelCtrl.$modelValue))
 
 

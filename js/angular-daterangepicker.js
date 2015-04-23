@@ -87,6 +87,9 @@
           if (modelCtrl.$modelValue.startDate === null) {
             return el.val('');
           }
+          if (modelCtrl.$modelValue.startDate.toString() === 'Invalid Date') {
+            return el.val('');
+          }
           return el.val(_formatted(modelCtrl.$modelValue));
         };
         _init = function() {
